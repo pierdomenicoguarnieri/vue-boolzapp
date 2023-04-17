@@ -71,3 +71,19 @@ aside .pg-top-bar .pg-user img{
 .active{
   background-color: #cecece;
 }
+
+.sent{
+  background-color: #D5F9BA;
+}
+
+.recived{
+  background-color: white;
+}
+
+.pg-last-message{
+  display: block;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+}
