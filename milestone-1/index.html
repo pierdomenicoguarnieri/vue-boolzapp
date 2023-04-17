@@ -16,8 +16,13 @@
       <div class="pg-main-wrapper vh-100 d-flex justify-content-center align-items-center">
         <div class="pg-application-container d-flex">
           <aside class="d-flex flex-column">
-            <div class="pg-top-bar border-end border-2">
+            <div class="pg-top-bar border-end border-2 d-flex align-items-center justify-content-between">
 
+              <div class="pg-icon fs-4">
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
             </div>
 
             <div class="pg-notification-bar d-flex px-3 align-items-center">
@@ -32,17 +37,29 @@
 
             <div class="pg-input-container input-group mb-3 p-2">
               <span class="input-group-text bg-white" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i></span>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Cerca o inizia una nuova chat">
             </div>
 
-            <div class="pg-contact-container px-3">
+            <div class="pg-contact-container px-3 overflow-scroll">
 
             </div>
           </aside>
 
-          <div class="pg-chat-container">
-            <div class="pg-top-bar">
+          <div class="pg-chat-container d-flex flex-column h-100">
+            <div class="pg-top-bar d-flex align-items-center justify-content-between flex-shrink-0">
+              <div class="pg-icon fs-4">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+            <div class="pg-chat-wrapper h-100 overflow-scroll">
 
+            </div>
+            <div class="pg-message-input d-flex align-items-center flex-shrink-0">
+              <i class="fa-regular fa-face-smile fs-4 p-5"></i>
+              <input class="form-control py-3" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
+              <i class="fa-solid fa-microphone fs-4 p-5"></i>
             </div>
           </div>
         </div>

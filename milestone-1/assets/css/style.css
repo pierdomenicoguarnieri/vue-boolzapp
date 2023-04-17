@@ -17,6 +17,11 @@ aside{
   width: 65%;
 }
 
+.pg-icon > i{
+  color: #B1B1B1;
+  padding: 0 5px;
+}
+
 .pg-top-bar{
   background-color: #EAEAEA;
   height: 70px;
@@ -29,10 +34,20 @@ aside{
 }
 
 .pg-notification-bar .pg-icon{
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
 }
 
 .pg-input-container{
   background-color: #FAFAFA;
+}
+
+.pg-chat-wrapper{
+  background-image: url("../img/mine.jpg");
+}
+
+.pg-message-input{
+  height: 80px;
+  background-color: #F3EEEA;
+  color: #6A7275;
 }
