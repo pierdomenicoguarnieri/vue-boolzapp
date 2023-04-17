@@ -14,35 +14,58 @@
     
     <div id="app">
       <div class="pg-main-wrapper vh-100 d-flex justify-content-center align-items-center">
+        <!-- Application Container -->
         <div class="pg-application-container d-flex">
+          
+          <!-- Aside -->
           <aside class="d-flex flex-column">
+
+            <!-- Top Bar -->
             <div class="pg-top-bar border-end border-2 d-flex align-items-center justify-content-between flex-shrink-0">
+
+              <!-- User Info -->
               <div class="pg-user ps-3">
                 <img class="rounded-circle" :src="self.avatar" alt="">
                 <span class="ps-3">{{self.name}}</span>
               </div>
+              <!-- /User Info -->
+
+              <!-- Icons -->
               <div class="pg-icon fs-4 pe-2">
                 <i class="fa-solid fa-circle-notch px-2"></i>
                 <i class="fa-solid fa-message px-2"></i>
                 <i class="fa-solid fa-ellipsis-vertical px-2"></i>
               </div>
+              <!-- /Icons -->
             </div>
+            <!-- /Top Bar -->
 
+            <!-- Notification Container -->
             <div class="pg-notification-bar d-flex px-3 align-items-center flex-shrink-0">
+
+              <!-- Icon Container -->
               <div class="pg-icon rounded-circle bg-white d-flex justify-content-center align-items-center me-3">
                 <i class="fa-solid fa-bell-slash fs-5" style="color: #8dd9fb;"></i>
               </div>
+              <!-- /Icon Container -->
+
+              <!-- Text Container -->
               <div class="pg-text d-flex flex-column">
                 <span class="pb-0 fw-medium">Ricevi notifiche di nuovi messaggi</span>
                 <a href="#" class="text-black-50">Attiva notifiche desktop</a>
               </div>
+              <!-- /Text Container -->
             </div>
+            <!-- /Notification Container -->
 
+            <!-- Input Container -->
             <div class="pg-input-container input-group p-2 flex-shrink-0">
               <span class="input-group-text bg-white" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i></span>
               <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Cerca o inizia una nuova chat">
             </div>
+            <!-- /Input Container -->
 
+            <!-- Contacts Container -->
             <div class="pg-contacts-container overflow-scroll">
               <div v-for="contact in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : contact.active}">
                 <div class="img-container px-3">
@@ -59,27 +82,40 @@
                 </div>
               </div>
             </div>
+            <!-- /Contacts Container -->
           </aside>
+          <!-- /Aside -->
 
+          <!-- Chat Container -->
           <div class="pg-chat-container d-flex flex-column h-100">
+
+            <!-- Top Bar -->
             <div class="pg-top-bar d-flex align-items-center justify-content-between flex-shrink-0">
-              <div v-for="contact in contacts" class="pg-contact-top ps-3">
-                <div class="pg-if-condition d-flex" v-if="contact.active">
-                  <div class="img-container">
-                    <img :src="contact.avatar" alt="" class="rounded-circle">
-                  </div>
-                  <div class="text-container d-flex justify-content-center flex-column ms-3">
-                    <span>{{contact.name}}</span>
-                    <span class="text-black-50 fs-6">Ultimo accesso {{contact.messages[0].date}}</span>
-                  </div>
+
+              <!-- Contact Top -->
+              <div class="pg-contact-top d-flex ps-3">
+                <div class="img-container">
+                  <img :src="contacts[index].avatar" alt="" class="rounded-circle">
+                </div>
+
+                <div class="text-container d-flex justify-content-center flex-column ms-3">
+                  <span>{{contacts[index].name}}</span>
+                  <span class="text-black-50 fs-6">Ultimo accesso {{contacts[index].messages[0].date}}</span>
                 </div>
               </div>
+              <!-- /Contact Top -->
+
+              <!-- Icon Container -->
               <div class="pg-icon fs-4 pe-2">
                 <i class="fa-solid fa-magnifying-glass px-2"></i>
                 <i class="fa-solid fa-paperclip px-2"></i>
                 <i class="fa-solid fa-ellipsis-vertical px-2"></i>
               </div>
+              <!-- /Icon Container -->
             </div>
+            <!-- /Top Bar -->
+
+            <!-- Chat Wrapper -->
             <div class="pg-chat-wrapper h-100 overflow-scroll">
               <div v-for="object in contacts" class="chat">
                 <div v-if="object.active" class="message-list">
@@ -93,12 +129,18 @@
               </div>
             </div>
             <div class="pg-message-input d-flex align-items-center flex-shrink-0">
+
               <i class="fa-regular fa-face-smile fs-4 p-5"></i>
+
               <input class="form-control py-3" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
+
               <i class="fa-solid fa-microphone fs-4 p-5"></i>
             </div>
+            <!-- /Message Input -->
           </div>
+          <!-- /Chat Container -->
         </div>
+        <!-- /Application Container -->
       </div>
     </div>
 
