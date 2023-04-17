@@ -13,6 +13,10 @@ aside{
   width: 35%;
 }
 
+aside .pg-top-bar .pg-user img{
+  width: 50px;
+}
+
 .pg-chat-container{
   width: 65%;
 }
@@ -38,6 +42,10 @@ aside{
   height: 45px;
 }
 
+.pg-contacts-container .pg-user-chat .img-container img{
+  width: 70px;
+}
+
 .pg-input-container{
   background-color: #FAFAFA;
 }
@@ -46,8 +54,20 @@ aside{
   background-image: url("../img/mine.jpg");
 }
 
+.pg-user-chat:not(.active):hover{
+  background-color: #EAEAEA;
+}
+
+.pg-contact-top img{
+  width: 60px;
+}
+
 .pg-message-input{
   height: 80px;
   background-color: #F3EEEA;
   color: #6A7275;
+}
+
+.active{
+  background-color: #cecece;
 }
