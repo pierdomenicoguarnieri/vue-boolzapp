@@ -72,12 +72,26 @@ aside .pg-top-bar .pg-user img{
   background-color: #cecece;
 }
 
-.sent{
-  background-color: #D5F9BA;
+.message{
+  padding: 10px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
 }
 
-.recived{
+.sent{
+  background-color: #D5F9BA;
+  align-self: flex-end;
+  max-width: 500px;
+  min-width: 200px;
+}
+
+.received{
   background-color: white;
+  align-self: flex-start;
+  max-width: 500px;
+  min-width: 200px;
 }
 
 .pg-last-message{
@@ -86,4 +100,8 @@ aside .pg-top-bar .pg-user img{
   white-space: nowrap;
   overflow: hidden;
   text-overflow : ellipsis;
+}
+
+.pg-small-text{
+  font-size: .7rem;
 }
