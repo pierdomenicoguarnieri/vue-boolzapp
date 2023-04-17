@@ -16,16 +16,19 @@
       <div class="pg-main-wrapper vh-100 d-flex justify-content-center align-items-center">
         <div class="pg-application-container d-flex">
           <aside class="d-flex flex-column">
-            <div class="pg-top-bar border-end border-2 d-flex align-items-center justify-content-between">
-
-              <div class="pg-icon fs-4">
-                <i class="fa-solid fa-circle-notch"></i>
-                <i class="fa-solid fa-message"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
+            <div class="pg-top-bar border-end border-2 d-flex align-items-center justify-content-between flex-shrink-0">
+              <div class="pg-user ps-3">
+                <img class="rounded-circle" :src="self.avatar" alt="">
+                <span class="ps-3">{{self.name}}</span>
+              </div>
+              <div class="pg-icon fs-4 pe-2">
+                <i class="fa-solid fa-circle-notch px-2"></i>
+                <i class="fa-solid fa-message px-2"></i>
+                <i class="fa-solid fa-ellipsis-vertical px-2"></i>
               </div>
             </div>
 
-            <div class="pg-notification-bar d-flex px-3 align-items-center">
+            <div class="pg-notification-bar d-flex px-3 align-items-center flex-shrink-0">
               <div class="pg-icon rounded-circle bg-white d-flex justify-content-center align-items-center me-3">
                 <i class="fa-solid fa-bell-slash fs-5" style="color: #8dd9fb;"></i>
               </div>
