@@ -2,3 +2,37 @@
   background: rgb(0,150,136);
   background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(216,219,212,1) 15%);
 }
+
+.pg-application-container{
+  height: 90%;
+  width: 75%;
+  background-color: white;
+}
+
+aside{
+  width: 35%;
+}
+
+.pg-chat-container{
+  width: 65%;
+}
+
+.pg-top-bar{
+  background-color: #EAEAEA;
+  height: 70px;
+  border-color: #B1B1B1;
+}
+
+.pg-notification-bar{
+  height: 80px;
+  background-color: #8EDAFC;
+}
+
+.pg-notification-bar .pg-icon{
+  width: 50px;
+  height: 50px;
+}
+
+.pg-input-container{
+  background-color: #FAFAFA;
+}
