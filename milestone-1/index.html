@@ -122,14 +122,20 @@
 
             <!-- Chat Wrapper -->
             <div class="pg-chat-wrapper h-100 overflow-scroll">
-              <div v-for="text in contacts[index].messages" class="message m-2">
-                <div :class="text.status" class="message">
-                  <span>{{text.message}}</span>
-                  <span class="pg-small-text text-black-50 text-end">{{text.date}}</span>
+              <div class="message m-2">
+                <div class="message received">
+                  <span>Ciao!</span>
+                  <span class="pg-small-text text-black-50 text-end">12:00</span>
+                </div>
+                <div class="message m-2">
+                  <div class="message sent">
+                    <span>Ciao!</span>
+                    <span class="pg-small-text text-black-50 text-end">12:00</span>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- /Chat Wrapper -->
+          <!-- /Chat Wrapper -->
 
             <!-- Message Input -->
             <div class="pg-message-input d-flex align-items-center flex-shrink-0">
