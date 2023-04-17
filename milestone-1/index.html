@@ -60,25 +60,30 @@
 
             <!-- Input Container -->
             <div class="pg-input-container input-group p-2 flex-shrink-0">
-              <span class="input-group-text bg-white" id="inputGroup-sizing-default"><i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i></span>
+
+              <span class="input-group-text bg-white" id="inputGroup-sizing-default">
+                <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+              </span>
+
               <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Cerca o inizia una nuova chat">
             </div>
             <!-- /Input Container -->
 
             <!-- Contacts Container -->
             <div class="pg-contacts-container overflow-scroll">
-              <div v-for="contact in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : contact.active}">
+              <div v-for="(contact, i) in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : index == i}">
+
                 <div class="img-container px-3">
                   <img class="rounded-circle" :src="contact.avatar" alt="">
                 </div>
 
                 <div class="text-container d-flex flex-column py-2">
                   <span class="fw-medium">{{contact.name}}</span>
-                  <span class="pg-last-message text-black-50 fs-6">{{contact.messages[0].message}}</span>
+                  <span class="pg-last-message text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].message}}</span>
                 </div>
 
                 <div class="date-container ms-auto me-3 py-2">
-                  <span class="text-black-50 fs-6">{{contact.messages[0].date}}</span>
+                  <span class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
                 </div>
               </div>
             </div>
@@ -117,17 +122,16 @@
 
             <!-- Chat Wrapper -->
             <div class="pg-chat-wrapper h-100 overflow-scroll">
-              <div v-for="object in contacts" class="chat">
-                <div v-if="object.active" class="message-list">
-                  <div v-for="text in object.messages" class="message m-2">
-                    <div :class="text.status" class="message">
-                      <span>{{text.message}}</span>
-                      <span class="pg-small-text text-black-50 text-end">{{text.date}}</span>
-                    </div>
-                  </div>
+              <div v-for="text in contacts[index].messages" class="message m-2">
+                <div :class="text.status" class="message">
+                  <span>{{text.message}}</span>
+                  <span class="pg-small-text text-black-50 text-end">{{text.date}}</span>
                 </div>
               </div>
             </div>
+            <!-- /Chat Wrapper -->
+
+            <!-- Message Input -->
             <div class="pg-message-input d-flex align-items-center flex-shrink-0">
 
               <i class="fa-regular fa-face-smile fs-4 p-5"></i>
