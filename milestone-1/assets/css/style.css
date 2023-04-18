@@ -6,9 +6,9 @@
 .message{
   padding: 10px 10px;
   border-radius: 10px;
+  word-wrap: break-word;
   display: flex;
   flex-direction: column;
-  word-wrap: break-word;
 }
 
 .sent{
@@ -90,6 +90,10 @@ aside .pg-contacts-container .pg-user-chat .img-container img{
 
 .pg-chat-container .pg-chat-wrapper{
   background-image: url("../img/mine.jpg");
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  padding: 10px 10px;
 }
 
 .pg-user-chat:not(.active):hover{
