@@ -58,3 +58,23 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
           - Nel caso in cui sia stato ricevuto, sarà visualizzato a sinistra ed il colore dello sfondo del messaggio  sarà bianco
 
 4. Utilizzando il v-for stampiamo dinamicamente il database
+
+**Steps Milestone 2:**
+
+1. Aggiungo un ciclo v-for che stampa che l'array dei messaggi di ogni contatto. per far ciò scrivo:
+
+    - v-for="contact in contacts"
+
+    - {{contact[index].messages.text}}
+
+2. Nella barra delle chat modifico al click il valore dell'index, questo mi permette di visualizzare le diverse chat
+
+**Steps Milestone 3:**
+
+1. Creiamo una nuova proprietà nel return di data
+
+2. Tramite un v-model nel campo di input andremo a salvare quello che viene scritto nella proprietà
+
+3. Creiamo una funzione che viene eseguita al @keyup.enter e che crea un oggetto che viene poi pushato nell'array di messaggi del contatto
+
+4. Con una timing function, dopo un secondo dall'invio del messaggio da parte dell'utente pushiamo all'interno dell'array dei messaggi del contatto un nuovo messaggio che abbia come testo "Ok!"
