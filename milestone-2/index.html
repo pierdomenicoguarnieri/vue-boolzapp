@@ -105,7 +105,7 @@
 
                 <div class="text-container d-flex justify-content-center flex-column ms-3">
                   <span>{{contacts[index].name}}</span>
-                  <span class="text-black-50 fs-6">Ultimo accesso {{contacts[index].messages[0].date}}</span>
+                  <span class="text-black-50 fs-6">Ultimo accesso {{contacts[index].messages[contacts[index].messages.length - 1].date}}</span>
                 </div>
               </div>
               <!-- /Contact Top -->
