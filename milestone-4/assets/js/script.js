@@ -18,14 +18,16 @@ createApp({
 
   methods: {
     newMsg(){
-      const msg = {
-        date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
-        message: this.newMsgText,
-        status: 'sent'
+      if(this.newMsgText.length > 0){
+        const msg = {
+          date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+          message: this.newMsgText,
+          status: 'sent'
+        }
+        this.contacts[this.index].messages.push(msg);
+        this.autoMsg();
+        this.newMsgText = "";
       }
-      this.contacts[this.index].messages.push(msg);
-      this.autoMsg();
-      this.newMsgText = "";
     },
 
     autoMsg(){
