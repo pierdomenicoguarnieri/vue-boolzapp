@@ -10,18 +10,17 @@
   word-wrap: break-word;
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
 
 .sent{
   background-color: #D5F9BA;
   align-self: flex-end;
-  max-width: 500px;
 }
 
 .received{
   background-color: white;
   align-self: flex-start;
-  max-width: 500px;
 }
 
 .pg-chevron{
@@ -37,18 +36,26 @@
   cursor: pointer;
 }
 
+.pg-last-message{
+  display: block;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow : ellipsis;
+}
+
 /* General Styling */
 
 .pg-main-wrapper{
   background: rgb(0,150,136);
   background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(216,219,212,1) 15%);
-  min-width: 1500px;
 }
 
 .pg-main-wrapper .pg-application-container{
   height: 90%;
-  width: 75%;
+  width: 80%;
   background-color: white;
+  min-width: 900px;
 }
 
 .pg-top-bar{
@@ -74,7 +81,8 @@
 /* Aside */
 
 aside{
-  width: 35%;
+  width: 25%;
+  min-width: 350px;
 }
 
 aside .pg-top-bar .pg-user img{
@@ -103,7 +111,7 @@ aside .pg-contacts-container .pg-user-chat .img-container img{
 /* Chat Container */
 
 .pg-chat-container{
-  width: 65%;
+  width: 75%;
 }
 
 .pg-chat-container .pg-chat-wrapper{
@@ -132,12 +140,4 @@ aside .pg-contacts-container .pg-user-chat .img-container img{
 .pg-message-input > i:hover{
   transition: all .5s;
   color: black;
-}
-
-.pg-last-message{
-  display: block;
-  width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow : ellipsis;
 }
