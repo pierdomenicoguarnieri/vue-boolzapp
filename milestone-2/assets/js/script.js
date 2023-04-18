@@ -9,7 +9,7 @@ createApp({
         name: "Pierdomenico",
         avatar: "assets/img/avatar_io.jpg"
       },
-      index: 0
+      index: 0,
     }
   }
 }).mount("#app")
