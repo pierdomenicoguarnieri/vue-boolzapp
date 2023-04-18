@@ -1,5 +1,6 @@
 import contacts from "./db.js"
 const {createApp} = Vue;
+const dt = luxon.DateTime;
 
 createApp({
   data(){
@@ -10,6 +11,7 @@ createApp({
         avatar: "assets/img/avatar_io.jpg"
       },
       index: 0,
+      newMsgText: ""
     }
   }
 }).mount("#app")
