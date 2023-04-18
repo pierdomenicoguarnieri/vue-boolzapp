@@ -126,13 +126,13 @@
 
             <!-- Chat Wrapper -->
             <div class="pg-chat-wrapper h-100 overflow-scroll">
-              <div v-for="text in contacts[index].messages" class="message position-relative mb-2" :class="text.status">
+              <div v-for="(text, msgIndex) in contacts[index].messages" class="message position-relative mb-2" :class="text.status">
                 <span class="pg-chevron" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chevron-down text-black-50"></i></span>
 
                 <div class="dropdown">
                   <ul class="dropdown-menu">
                     <li><button class="dropdown-item" type="button">Info messaggio</button></li>
-                    <li><button class="dropdown-item" type="button">Elimina messaggio</button></li>
+                    <li @click="deleteMessage(msgIndex)"><button class="dropdown-item" type="button">Elimina messaggio</button></li>
                   </ul>
                 </div>
 

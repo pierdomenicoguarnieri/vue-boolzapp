@@ -45,6 +45,11 @@ createApp({
       this.contacts.forEach((contact) => {
         contact.visible = contact.name.toLowerCase().includes(this.checkMsg.toLowerCase())
       })
+    },
+
+    deleteMessage(msgIndex){
+      console.log(msgIndex)
+      this.contacts[this.index].messages.splice(msgIndex,1)
     }
   },
 }).mount("#app")
