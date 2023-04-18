@@ -81,11 +81,11 @@
 
                   <div class="text-container d-flex flex-column py-2">
                     <span class="fw-medium">{{contact.name}}</span>
-                    <span class="pg-last-message text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].message}}</span>
+                    <span v-if="contact.messages.length >= 1" class="pg-last-message text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].message}}</span>
                   </div>
 
                   <div class="date-container ms-auto me-3 py-2">
-                    <span class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
+                    <span v-if="contact.messages.length >= 1" class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
                   </div>
                 </div>
                 
@@ -109,7 +109,7 @@
 
                 <div class="text-container d-flex justify-content-center flex-column ms-3">
                   <span>{{contacts[index].name}}</span>
-                  <span class="text-black-50 fs-6">Ultimo accesso {{contacts[index].messages[contacts[index].messages.length - 1].date}}</span>
+                  <span v-if="contacts[index].messages.length >= 1" class="text-black-50 fs-6">Ultimo accesso {{contacts[index].messages[contacts[index].messages.length - 1].date}}</span>
                 </div>
               </div>
               <!-- /Contact Top -->
