@@ -145,8 +145,17 @@
 
             <!-- Message Input -->
             <div class="pg-message-input d-flex align-items-center flex-shrink-0">
-
-              <i class="fa-regular fa-face-smile fs-4 m-5"></i>
+              
+              <div class="btn-group dropup">
+                <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-regular fa-face-smile fs-4 mx-5 my-4"></i>
+                </span>
+                <ul class="dropdown-menu pg-emoji-menu">
+                  <li class="px-3 fs-3"><i class="fa-solid fa-face-smile" style="color: #f6d32d;"></i></li>
+                  <li class="px-3 fs-3"><i class="fa-solid fa-face-surprise" style="color: #f6d32d;"></i></li>
+                  <li class="px-3 fs-3"><i class="fa-solid fa-face-sad-cry" style="color: #f6d32d;"></i></li>
+                </ul>
+              </div>
 
               <input v-model.trim="newMsgText" @keyup.enter="newMsg" class="form-control py-3" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
 

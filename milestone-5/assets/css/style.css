@@ -44,6 +44,20 @@
   text-overflow : ellipsis;
 }
 
+.pg-emoji-menu{
+  max-width: 300px;
+}
+
+.dropdown-menu.show{
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.pg-emoji-menu{
+  max-width: 250px !important;
+  min-width: 200px !important;
+}
+
 /* General Styling */
 
 .pg-main-wrapper{
@@ -137,7 +151,7 @@ aside .pg-contacts-container .pg-user-chat .img-container img{
   color: #6A7275;
 }
 
-.pg-message-input > i:hover{
+.pg-message-input i:hover{
   transition: all .5s;
   color: black;
 }
