@@ -66,7 +66,7 @@
                 <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
               </span>
 
-              <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Cerca o inizia una nuova chat">
+              <input @keyup="searchContact" v-model.trim="checkMsg" type="text" class="form-control" aria-label="Sizing example input" placeholder="Cerca o inizia una nuova chat">
             </div>
             <!-- /Input Container -->
 

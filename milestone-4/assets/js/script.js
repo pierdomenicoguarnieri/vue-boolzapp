@@ -11,7 +11,8 @@ createApp({
         avatar: "assets/img/avatar_io.jpg"
       },
       index: 0,
-      newMsgText: ""
+      newMsgText: "",
+      checkMsg: ""
     }
   },
 
