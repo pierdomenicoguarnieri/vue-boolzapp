@@ -84,3 +84,11 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 1. Creo un v-model all'input di ricerca che modifichi la proprietà checkMsg 
 
 2. Tramite una funzione e sfruttando le proprietà delle stringhe utilizzo `.includes` per verificare se la srtinga inserita sia presente nel nome dei contatti
+
+**Steps Milestone 5:**
+
+1. All'hover sul messaggio compare la chevron
+
+2. Al click della chevron compare il menù a tendina
+
+3. Creo una funzione che mi rimuova il messaggio selezionato dall'array dei messaggi
