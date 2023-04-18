@@ -26,6 +26,19 @@
   min-width: 200px;
 }
 
+.pg-chevron{
+  position: absolute;
+  opacity: 0;
+}
+
+.message:hover .pg-chevron{
+  opacity: 1;
+  transition: all .3s;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
 /* General Styling */
 
 .pg-main-wrapper{

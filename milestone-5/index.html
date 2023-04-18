@@ -126,9 +126,18 @@
 
             <!-- Chat Wrapper -->
             <div class="pg-chat-wrapper h-100 overflow-scroll">
-              <div v-for="text in contacts[index].messages" class="message mb-2" :class="text.status">
-                <span>{{text.message}}</span>
-                <span class="pg-small-text text-black-50 text-end">{{text.date}}</span>
+              <div v-for="text in contacts[index].messages" class="message position-relative mb-2" :class="text.status">
+                <span class="pg-chevron" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chevron-down text-black-50"></i></span>
+
+                <div class="dropdown">
+                  <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button">Info messaggio</button></li>
+                    <li><button class="dropdown-item" type="button">Elimina messaggio</button></li>
+                  </ul>
+                </div>
+
+                <span class="me-4">{{text.message}}</span>
+                <span class="pg-small-text text-black-50 text-end me-2">{{text.date}}</span>
               </div>
             </div>
             <!-- /Chat Wrapper -->
