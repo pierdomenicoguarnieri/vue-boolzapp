@@ -78,3 +78,9 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 3. Creiamo una funzione che viene eseguita al @keyup.enter e che crea un oggetto che viene poi pushato nell'array di messaggi del contatto
 
 4. Con una timing function, dopo un secondo dall'invio del messaggio da parte dell'utente pushiamo all'interno dell'array dei messaggi del contatto un nuovo messaggio che abbia come testo "Ok!"
+
+**Steps Milestone 4:**
+
+1. Creo un v-model all'input di ricerca che modifichi la proprietà checkMsg 
+
+2. Tramite una funzione e sfruttando le proprietà delle stringhe utilizzo `.includes` per verificare se la srtinga inserita sia presente nel nome dei contatti
