@@ -71,7 +71,7 @@
 
             <!-- Contacts Container -->
             <div class="pg-contacts-container overflow-scroll">
-              <div v-for="(contact, i) in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : index == i}">
+              <div v-for="(contact, i) in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : index == i}" @click="index = i">
 
                 <div class="img-container px-3">
                   <img class="rounded-circle" :src="contact.avatar" alt="">
