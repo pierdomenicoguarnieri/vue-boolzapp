@@ -63,7 +63,7 @@
             <div class="pg-input-container input-group p-2 flex-shrink-0">
 
               <span class="input-group-text bg-white" id="inputGroup-sizing-default">
-                <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                <i @click="searchContact" class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
               </span>
 
               <input @keyup="searchContact" v-model.trim="checkMsg" type="text" class="form-control" aria-label="Sizing example input" placeholder="Cerca o inizia una nuova chat">
@@ -72,20 +72,23 @@
 
             <!-- Contacts Container -->
             <div class="pg-contacts-container overflow-scroll">
-              <div v-for="(contact, i) in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : index == i}" @click="index = i">
+              <div v-for="(contact, i) in contacts" class="pg-user-chat" :class="{active : index == i}" @click="index = i">
 
-                <div class="img-container px-3">
-                  <img class="rounded-circle" :src="contact.avatar" alt="">
-                </div>
+                <div v-if="contact.visible" class="pg-contact-body border-1 border-bottom d-flex py-2">
+                  <div class="img-container px-3">
+                    <img class="rounded-circle" :src="contact.avatar" alt="">
+                  </div>
 
-                <div class="text-container d-flex flex-column py-2">
-                  <span class="fw-medium">{{contact.name}}</span>
-                  <span class="pg-last-message text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].message}}</span>
-                </div>
+                  <div class="text-container d-flex flex-column py-2">
+                    <span class="fw-medium">{{contact.name}}</span>
+                    <span class="pg-last-message text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].message}}</span>
+                  </div>
 
-                <div class="date-container ms-auto me-3 py-2">
-                  <span class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
+                  <div class="date-container ms-auto me-3 py-2">
+                    <span class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
+                  </div>
                 </div>
+                
               </div>
             </div>
             <!-- /Contacts Container -->

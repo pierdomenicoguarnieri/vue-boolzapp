@@ -37,6 +37,12 @@ createApp({
         }
         this.contacts[this.index].messages.push(msg);
       }, 1000);
+    },
+
+    searchContact(){
+      this.contacts.forEach((contact) => {
+        contact.visible = contact.name.toLowerCase().includes(this.checkMsg.toLowerCase())
+      })
     }
-  }
+  },
 }).mount("#app")
