@@ -16,14 +16,12 @@
   background-color: #D5F9BA;
   align-self: flex-end;
   max-width: 500px;
-  min-width: 200px;
 }
 
 .received{
   background-color: white;
   align-self: flex-start;
   max-width: 500px;
-  min-width: 200px;
 }
 
 .pg-chevron{
