@@ -26,5 +26,16 @@ createApp({
       this.autoMsg();
       this.newMsgText = "";
     },
+
+    autoMsg(){
+      setTimeout(() => {
+        const msg = {
+          date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+          message: "Ok!",
+          status: 'received'
+        }
+        this.contacts[this.index].messages.push(msg);
+      }, 1000);
+    }
   }
 }).mount("#app")
