@@ -1,5 +1,6 @@
 /* General Classes */
 .active{
+  transition: all .5s;
   background-color: #cecece;
 }
 
@@ -47,6 +48,11 @@
 .pg-icon > i{
   color: #B1B1B1;
   padding: 0 5px;
+}
+
+.pg-icon > i:hover{
+  transition: all .5s;
+  color: black;
 }
 
 .pg-small-text{
@@ -97,6 +103,7 @@ aside .pg-contacts-container .pg-user-chat .img-container img{
 }
 
 .pg-user-chat:not(.active):hover{
+  transition: all .5s;
   background-color: #EAEAEA;
 }
 
@@ -108,6 +115,11 @@ aside .pg-contacts-container .pg-user-chat .img-container img{
   height: 80px;
   background-color: #F3EEEA;
   color: #6A7275;
+}
+
+.pg-message-input > i:hover{
+  transition: all .5s;
+  color: black;
 }
 
 .pg-last-message{
