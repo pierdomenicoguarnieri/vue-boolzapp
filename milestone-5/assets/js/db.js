@@ -5,19 +5,22 @@ export default [
       visible: true,
       messages: [
         {
-          date: '10/01/2020 15:30:55',
-          message: 'Hai portato a spasso il cane?',
+          date: "10/01/2020",
+          time: "15:30:55",
+          message: "Sei tornato dalla posta?",
           status: 'sent'
         },
         {
-          date: '10/01/2020 15:50:00',
-          message: 'Ricordati di stendere i panni',
-          status: 'sent'
-        },
-        {
-          date: '10/01/2020 16:15:22',
-          message: 'Tutto fatto!',
+          date: "10/01/2020",
+          time: "15:50:00",
+          message: "Posta? Non sono andato in posta oggi",
           status: 'received'
+        },
+        {
+          date: "10/01/2020",
+          time: "16:15:22",
+          message: "Non era oggi il giorno per ritirare la pensione?",
+          status: 'sent'
         }
       ],
   },
@@ -27,18 +30,21 @@ export default [
       visible: true,
       messages: [
         {
-          date: '20/03/2020 16:30:00',
-          message: 'Ciao come stai?',
+          date: "20/03/2020",
+          time: "16:30:00",
+          message: "Non ho mai capito se sei pugliese o no",
           status: 'sent'
         },
         {
-            date: '20/03/2020 16:30:55',
-            message: 'Bene grazie! Stasera ci vediamo?',
+            date: "20/03/2020",
+            time: "16:30:55",
+            message: "Uè testina, io sono di Milano",
             status: 'received'
         },
         {
-            date: '20/03/2020 16:35:00',
-            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+            date: "20/03/2020",
+            time: "16:35:00",
+            message: "Ok...",
             status: 'sent'
         }
       ],
@@ -49,18 +55,21 @@ export default [
       visible: true,
       messages: [
         {
-          date: '28/03/2020 10:10:40',
-          message: 'La Marianna va in campagna',
+          date: "28/03/2020",
+          time: "10:10:40",
+          message: "Uanm",
           status: 'received'
         },
         {
-            date: '28/03/2020 10:20:10',
-            message: 'Sicuro di non aver sbagliato chat?',
+            date: "28/03/2020",
+            time: "10:20:10",
+            message: "Uanm",
             status: 'sent'
         },
         {
-            date: '28/03/2020 16:15:22',
-            message: 'Ah scusa!',
+            date: "28/03/2020",
+            time: "16:15:22",
+            message: "Forza Napoli",
             status: 'received'
         }
       ],
@@ -71,13 +80,15 @@ export default [
       visible: true,
       messages: [
         {
-          date: '10/01/2020 15:30:55',
-          message: 'Lo sai che ha aperto una nuova pizzeria?',
+          date: "10/01/2020",
+          time: "15:30:55",
+          message: "Puoi aiutarmi? Non riesco a fare questo esercizio...",
           status: 'sent'
         },
         {
-            date: '10/01/2020 15:50:00',
-            message: 'Si, ma preferirei andare al cinema',
+            date: "10/01/2020",
+            time: "15:50:00",
+            message: "No",
             status: 'received'
         }
       ],
@@ -88,13 +99,15 @@ export default [
       visible: true,
       messages: [
         {
-          date: '10/01/2020 15:30:55',
-          message: 'Ricordati di chiamare la nonna',
+          date: "10/01/2020",
+          time: "15:30:55",
+          message: "Ciao Andrea, da dove compri le tue borracce?",
           status: 'sent'
         },
         {
-            date: '10/01/2020 15:50:00',
-            message: 'Va bene, stasera la sento',
+            date: "10/01/2020",
+            time: "15:50:00",
+            message: "Sì",
             status: 'received'
         }
       ],
@@ -105,18 +118,21 @@ export default [
       visible: true,
       messages: [
         {
-          date: '10/01/2020 15:30:55',
-          message: 'Ciao Claudia, hai novità?',
+          date: "10/01/2020",
+          time: "15:30:55",
+          message: "Ciao Marica, sai se c'è lavoro a Napoli?",
           status: 'sent'
         },
         {
-            date: '10/01/2020 15:50:00',
-            message: 'Non ancora',
+            date: "10/01/2020",
+            time: "15:50:00",
+            message: "Ma che ne so io, sono di Viterbo",
             status: 'received'
         },
         {
-            date: '10/01/2020 15:51:00',
-            message: 'Nessuna nuova, buona nuova',
+            date: "10/01/2020",
+            time: "15:51:00",
+            message: "Hai ragione...",
             status: 'sent'
         }
       ],
@@ -127,13 +143,15 @@ export default [
       visible: true,
       messages: [
         {
-          date: '10/01/2020 15:30:55',
-          message: 'Fai gli auguri a Martina che è il suo compleanno!',
+          date: "10/01/2020",
+          time: "15:30:55",
+          message: "Non hai ancora pushato!",
           status: 'sent'
         },
         {
-            date: '10/01/2020 15:50:00',
-            message: 'Grazie per avermelo ricordato, le scrivo subito!',
+            date: "10/01/2020",
+            time: "15:50:00",
+            message: "Lo faccio subito",
             status: 'received'
         }
       ],
@@ -144,18 +162,21 @@ export default [
       visible: true,
       messages: [
         {
-          date: '10/01/2020 15:30:55',
-          message: 'Ciao, andiamo a mangiare la pizza stasera?',
+          date: "10/01/2020",
+          time: "15:30:55",
+          message: "Ciao, hai risolto il problema sull'ultimo esercizio?",
           status: 'received'
         },
         {
-            date: '10/01/2020 15:50:00',
-            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+            date: "10/01/2020",
+            time: "15:50:00",
+            message: "No, non so cosa faccia const...",
             status: 'sent'
         },
         {
-            date: '10/01/2020 15:51:00',
-            message: 'OK!!',
+            date: "10/01/2020",
+            time: "15:51:00",
+            message: 'Vieni in ticket che ne parliamo!',
             status: 'received'
         }
       ],

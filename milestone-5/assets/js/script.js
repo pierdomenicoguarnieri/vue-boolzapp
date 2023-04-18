@@ -20,7 +20,8 @@ createApp({
     newMsg(){
       if(this.newMsgText.length > 0){
         const msg = {
-          date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+          date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
+          time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
           message: this.newMsgText,
           status: 'sent'
         }
@@ -33,7 +34,8 @@ createApp({
     autoMsg(){
       setTimeout(() => {
         const msg = {
-          date: dt.now().setLocale("it").toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+          date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
+          time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
           message: "Ok!",
           status: 'received'
         }
