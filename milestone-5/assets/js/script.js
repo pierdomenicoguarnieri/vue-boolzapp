@@ -8,7 +8,7 @@ createApp({
       contacts,
       self: {
         name: "Pierdomenico",
-        avatar: "assets/img/avatar_io.jpg"
+        avatar: "assets/img/avatar_io.png"
       },
       index: 0,
       newMsgText: "",

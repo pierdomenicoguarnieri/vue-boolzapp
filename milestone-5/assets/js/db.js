@@ -1,7 +1,38 @@
 export default [
   {
+    name: 'Ale',
+    avatar: 'assets/img/avatar_1.png',
+    visible: true,
+    messages: [
+      {
+        date: "01/01/2020",
+        time: "15:25:55",
+        message: "Che fai?",
+        status: 'sent'
+      },
+      {
+        date: "01/01/2020",
+        time: "15:26:00",
+        message: "Sto studiando, e tu?",
+        status: 'received'
+      },
+      {
+        date: "01/01/2020",
+        time: "15:26:22",
+        message: "Ho appena finito, vuoi che passo a prenderti?",
+        status: 'sent'
+      },
+      {
+        date: "01/01/2020",
+        time: "15:26:34",
+        message: "Magari!",
+        status: 'received'
+      }
+    ],
+},
+  {
       name: 'Raffaele',
-      avatar: 'assets/img/avatar_1.jpg',
+      avatar: 'assets/img/avatar_2.png',
       visible: true,
       messages: [
         {
@@ -26,7 +57,7 @@ export default [
   },
   {
       name: 'Marco',
-      avatar: 'assets/img/avatar_2.jpg',
+      avatar: 'assets/img/avatar_3.png',
       visible: true,
       messages: [
         {
@@ -51,7 +82,7 @@ export default [
   },
   {
       name: 'Marco C.',
-      avatar: 'assets/img/avatar_3.jpg',
+      avatar: 'assets/img/avatar_4.png',
       visible: true,
       messages: [
         {
@@ -76,7 +107,7 @@ export default [
   },
   {
       name: 'Gabriele',
-      avatar: 'assets/img/avatar_4.jpg',
+      avatar: 'assets/img/avatar_5.png',
       visible: true,
       messages: [
         {
@@ -95,7 +126,7 @@ export default [
   },
   {
       name: 'Andrea',
-      avatar: 'assets/img/avatar_5.jpg',
+      avatar: 'assets/img/avatar_6.png',
       visible: true,
       messages: [
         {
@@ -114,7 +145,7 @@ export default [
   },
   {
       name: 'Marica',
-      avatar: 'assets/img/avatar_6.jpg',
+      avatar: 'assets/img/avatar_7.png',
       visible: true,
       messages: [
         {
@@ -139,7 +170,7 @@ export default [
   },
   {
       name: 'Loris',
-      avatar: 'assets/img/avatar_7.jpg',
+      avatar: 'assets/img/avatar_8.png',
       visible: true,
       messages: [
         {
@@ -158,7 +189,7 @@ export default [
   },
   {
       name: 'Luca',
-      avatar: 'assets/img/avatar_8.jpg',
+      avatar: 'assets/img/avatar_9.png',
       visible: true,
       messages: [
         {
