@@ -12,7 +12,8 @@ createApp({
       },
       index: 0,
       newMsgText: "",
-      checkMsg: ""
+      checkMsg: "",
+      messageIndex: 0,
     }
   },
 
@@ -52,6 +53,10 @@ createApp({
     deleteMessage(msgIndex){
       console.log(msgIndex)
       this.contacts[this.index].messages.splice(msgIndex,1)
+    },
+
+    saveIndex(msgIndex){
+      this.messageIndex = msgIndex;
     }
   },
 }).mount("#app")
