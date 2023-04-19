@@ -12,7 +12,6 @@ createApp({
       },
       index: 0,
       newMsgText: "",
-      emoji: '',
       checkMsg: "",
       messageIndex: 0,
     }
@@ -24,7 +23,7 @@ createApp({
         const msg = {
           date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
-          message: this.newMsgText + this.emoji,
+          message: this.newMsgText,
           status: 'sent'
         }
         this.contacts[this.index].messages.push(msg);
@@ -64,19 +63,19 @@ createApp({
     addEmoji(selectedEmoji){
       switch (selectedEmoji) {
         case 1:
-          this.emoji += ' <i class="fa-solid fa-face-smile fs-5 ps-1" style="color: #f6d32d;"></i>';
+          this.newMsgText += ' <i class="fa-solid fa-face-smile fs-5 ps-1" style="color: #f6d32d;"></i>';
           break;
 
         case 2:
-          this.emoji += ' <i class="fa-solid fa-face-surprise fs-5 ps-1" style="color: #f6d32d;"></i>';
+          this.newMsgText += ' <i class="fa-solid fa-face-surprise fs-5 ps-1" style="color: #f6d32d;"></i>';
           break;
 
         case 3:
-          this.emoji += ' <i class="fa-solid fa-face-sad-cry fs-5 ps-1" style="color: #f6d32d;"></i>';
+          this.newMsgText += ' <i class="fa-solid fa-face-sad-cry fs-5 ps-1" style="color: #f6d32d;"></i>';
           break;
 
         default:
-          this.emoji += '';
+          this.newMsgText += '';
           break;
       }
     }
