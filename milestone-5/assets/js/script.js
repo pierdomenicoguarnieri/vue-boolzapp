@@ -1,4 +1,5 @@
 import contacts from "./db.js"
+import replyArray from "./reply-db.js"
 const {createApp} = Vue;
 const dt = luxon.DateTime;
 
@@ -37,11 +38,12 @@ createApp({
     },
 
     autoMsg(){
+      const randomIndex = Math.floor(Math.random()*replyArray.length)+ 1
       setTimeout(() => {
         const msg = {
           date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
-          message: "Ok!",
+          message: replyArray[randomIndex],
           status: 'received',
           visible: true
         }
@@ -52,6 +54,12 @@ createApp({
     searchContact(){
       this.contacts.forEach((contact) => {
         contact.visible = contact.name.toLowerCase().includes(this.checkMsg.toLowerCase())
+      })
+    },
+
+    searchMsg(){
+      this.contacts[this.index].messages.forEach((txt) => {
+        txt.visible = txt.message.toLowerCase().includes(this.checkTxt.toLowerCase())
       })
     },
 
@@ -105,12 +113,6 @@ createApp({
           this.newMsgText += '';
           break;
       }
-    },
-
-    searchMsg(){
-      this.contacts[this.index].messages.forEach((txt) => {
-        txt.visible = txt.message.toLowerCase().includes(this.checkTxt.toLowerCase())
-      })
-    },
+    }
   },
 }).mount("#app")

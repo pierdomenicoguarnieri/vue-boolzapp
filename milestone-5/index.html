@@ -118,7 +118,7 @@
               <div class="pg-icon fs-4 pe-2" :class="{'pg-black' : darkMode}">
                 
                 <div class="btn-group dropstart">
-                  <button class="btn pg-icon border-0 px-0" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button class="btn pg-icon border-0 px-0" :class="{'pg-black' : darkMode}" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-magnifying-glass fs-4 px-2"></i>
                   </button>
                   <div class="dropdown-menu p-0 pg-search">
@@ -138,6 +138,7 @@
 
               <!-- Message -->
               <div v-for="(text, msgIndex) in contacts[index].messages" v-show="text.visible" class="message position-relative mb-2" :class="text.status, {'pg-black' : darkMode}">
+                
                 <span class="pg-chevron" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chevron-down text-black-50"></i></span>
 
                 <!-- Dropdown Menu -->
