@@ -31,6 +31,7 @@ createApp({
           visible: true
         }
         this.contacts[this.index].messages.push(msg);
+        this.scrollUp();
         this.autoMsg();
         this.newMsgText = "";
         this.emoji = '';
@@ -47,8 +48,16 @@ createApp({
           status: 'received',
           visible: true
         }
+        this.scrollUp();
         this.contacts[this.index].messages.push(msg);
       }, 1000);
+    },
+
+    scrollUp(){
+      setTimeout(() => {
+        const chat = document.querySelector('.pg-chat-wrapper');
+        chat.scrollTop = chat.scrollHeight;
+      }, 1);
     },
 
     searchContact(){
