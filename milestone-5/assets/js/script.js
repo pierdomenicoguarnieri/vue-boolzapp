@@ -13,6 +13,7 @@ createApp({
       index: 0,
       newMsgText: "",
       checkMsg: "",
+      checkTxt: "",
       messageIndex: 0,
       darkMode: false,
     }
@@ -25,7 +26,8 @@ createApp({
           date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
           message: this.newMsgText,
-          status: 'sent'
+          status: 'sent',
+          visible: true
         }
         this.contacts[this.index].messages.push(msg);
         this.autoMsg();
@@ -40,7 +42,8 @@ createApp({
           date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
           message: "Ok!",
-          status: 'received'
+          status: 'received',
+          visible: true
         }
         this.contacts[this.index].messages.push(msg);
       }, 1000);
@@ -102,6 +105,12 @@ createApp({
           this.newMsgText += '';
           break;
       }
-    }
+    },
+
+    searchMsg(){
+      this.contacts[this.index].messages.forEach((txt) => {
+        txt.visible = txt.message.toLowerCase().includes(this.checkTxt.toLowerCase())
+      })
+    },
   },
 }).mount("#app")

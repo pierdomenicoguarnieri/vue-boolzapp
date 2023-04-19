@@ -77,6 +77,10 @@
   height: 100% !important;
   top: 0;
 }
+
+.pg-search{
+  width: 300px !important;
+}
 /* General Styling */
 
 .pg-main-wrapper{

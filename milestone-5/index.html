@@ -116,7 +116,16 @@
 
               <!-- Icon Container -->
               <div class="pg-icon fs-4 pe-2" :class="{'pg-black' : darkMode}">
-                <i class="fa-solid fa-magnifying-glass px-2"></i>
+                
+                <div class="btn-group dropstart">
+                  <button class="btn pg-icon border-0 px-0" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-magnifying-glass fs-4 px-2"></i>
+                  </button>
+                  <div class="dropdown-menu p-0 pg-search">
+                    <input v-model="checkTxt" @keyup="searchMsg" class="form-control w-100" type="text" placeholder="Cerca un messaggio">
+                  </div>
+                </div>
+                
                 <i class="fa-solid fa-paperclip px-2"></i>
                 <i class="fa-solid fa-ellipsis-vertical px-2"></i>
               </div>
@@ -128,7 +137,7 @@
             <div class="pg-chat-wrapper position-relative overflow-x-hidden h-100 overflow-scroll" :class="{'pg-black': darkMode}">
 
               <!-- Message -->
-              <div v-for="(text, msgIndex) in contacts[index].messages" class="message position-relative mb-2" :class="text.status, {'pg-black' : darkMode}">
+              <div v-for="(text, msgIndex) in contacts[index].messages" v-show="text.visible" class="message position-relative mb-2" :class="text.status, {'pg-black' : darkMode}">
                 <span class="pg-chevron" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chevron-down text-black-50"></i></span>
 
                 <!-- Dropdown Menu -->
@@ -189,22 +198,50 @@
             <!-- Message Input -->
             <div class="pg-message-input d-flex align-items-center flex-shrink-0" :class="{'pg-black' : darkMode}">
               
+              <!-- Emoji Dropup -->
               <div class="btn-group dropup">
                 <span data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa-regular fa-face-smile fs-4 mx-5 my-4 poi"></i>
                 </span>
                 <ul class="dropdown-menu pg-emoji-menu" :class="{'pg-black' : darkMode}">
-                  <li class="px-3 fs-3" @click="addEmoji(1)"><i class="fa-solid fa-face-smile" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(2)"><i class="fa-solid fa-face-surprise" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(3)"><i class="fa-solid fa-face-sad-cry" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(4)"><i class="fa-solid fa-face-smile-beam" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(5)"><i class="fa-solid fa-face-kiss-wink-heart" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(6)"><i class="fa-solid fa-face-meh-blank" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(7)"><i class="fa-solid fa-face-grin-hearts" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(8)"><i class="fa-solid fa-face-smile-wink" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3" @click="addEmoji(9)"><i class="fa-solid fa-face-angry" style="color: #e01b24;"></i></li>
+                  <li class="px-3 fs-3" @click="addEmoji(1)">
+                    <i class="fa-solid fa-face-smile" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(2)">
+                    <i class="fa-solid fa-face-surprise" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(3)">
+                    <i class="fa-solid fa-face-sad-cry" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(4)">
+                    <i class="fa-solid fa-face-smile-beam" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(5)">
+                    <i class="fa-solid fa-face-kiss-wink-heart" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(6)">
+                    <i class="fa-solid fa-face-meh-blank" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(7)">
+                    <i class="fa-solid fa-face-grin-hearts" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(8)">
+                    <i class="fa-solid fa-face-smile-wink" style="color: #f6d32d;"></i>
+                  </li>
+
+                  <li class="px-3 fs-3" @click="addEmoji(9)">
+                    <i class="fa-solid fa-face-angry" style="color: #e01b24;"></i>
+                  </li>
                 </ul>
               </div>
+              <!-- /Emoji Dropup -->
 
               <input v-model.trim="newMsgText" @keyup.enter="newMsg" class="form-control py-3" type="text" placeholder="Scrivi un messaggio" aria-label="default input example">
 
