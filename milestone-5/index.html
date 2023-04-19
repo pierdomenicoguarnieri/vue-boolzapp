@@ -80,12 +80,12 @@
 
                 <div class="text-container d-flex flex-column py-2">
                   <span class="fw-medium" :class="{whiteText : darkMode}">{{contact.name}}</span>
-                  <span v-if="contact.messages.length >= 1" class="pg-last-message fs-6" v-html="contact.messages[contact.messages.length - 1].message" :class="{whiteText : darkMode}"></span>
+                  <span v-if="contact.messages.length >= 1" class="pg-last-message fs-6" v-html="contact.messages[contact.messages.length - 1].message" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}"></span>
                 </div>
 
                 <div class="date-container ms-auto d-flex flex-column text-end me-3 py-2">
-                  <span v-if="contact.messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}">{{contact.messages[contact.messages.length - 1].date}}</span>
-                  <span v-if="contact.messages.length >= 1" class=" fs-6" :class="{whiteText : darkMode}">{{contact.messages[contact.messages.length - 1].time}}</span>
+                  <span v-if="contact.messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">{{contact.messages[contact.messages.length - 1].date}}</span>
+                  <span v-if="contact.messages.length >= 1" class=" fs-6" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">{{contact.messages[contact.messages.length - 1].time}}</span>
                 </div>
 
               </div>
@@ -108,7 +108,7 @@
 
                 <div class="text-container d-flex justify-content-center flex-column ms-3">
                   <span :class="{whiteText : darkMode}">{{contacts[index].name}}</span>
-                  <span v-if="contacts[index].messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}">Ultimo accesso alle {{contacts[index].messages[contacts[index].messages.length - 1].time}} del {{contacts[index].messages[contacts[index].messages.length - 1].date}}</span>
+                  <span v-if="contacts[index].messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">Ultimo accesso alle {{contacts[index].messages[contacts[index].messages.length - 1].time}} del {{contacts[index].messages[contacts[index].messages.length - 1].date}}</span>
                 </div>
               </div>
               <!-- /Contact Top -->
@@ -140,7 +140,7 @@
                 <!-- /Dropdown Menu -->
                 
                 <span class="me-4" v-html="text.message" :class="{whiteText : darkMode}"></span>
-                <span class="pg-small-text text-end me-2" :class="{whiteText : darkMode}">{{text.time}}</span>
+                <span class="pg-small-text text-end me-2" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">{{text.time}}</span>
               </div>
               <!-- /Message -->
               
@@ -159,7 +159,7 @@
                   <div class="d-flex flex-column">
 
                     <div class="py-2" :class="{whiteText : darkMode}">
-                      <span class="fw-semibold">Messaggio:</span>
+                      <span class="fw-semibold">Messaggio: </span>
                       <span v-html="contacts[index].messages[messageIndex].message"></span>
                     </div>
 
