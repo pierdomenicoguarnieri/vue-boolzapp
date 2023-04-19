@@ -1,0 +1,77 @@
+.active.pg-black{
+  background-color: rgb(68, 67, 67);
+}
+
+.sent.pg-black{
+  background-color: rgba(0,150,136,1);
+}
+
+.received.pg-black{
+  background-color: rgb(58, 57, 57);
+}
+
+.dropdown-menu.show.pg-black{
+  background-color: rgb(32, 32, 32);
+}
+
+.offcanvas.pg-black{
+  background-color: rgb(32, 32, 32);
+}
+
+.pg-top-bar.pg-black{
+  background-color: rgb(44, 44, 44);
+}
+
+.pg-icon.pg-black > i:hover{
+  transition: all .5s;
+  color: white;
+}
+
+aside .pg-top-bar.pg-black{
+  border-right: 2px solid black;
+  color: white;
+}
+
+aside .pg-notification-bar.pg-black{
+  background-color: rgb(0, 1, 39);
+}
+
+aside .pg-notification-bar.pg-black .pg-icon > i{
+  color: rgb(0, 1, 39);
+}
+
+aside .pg-input-container.pg-black{
+  background-color: rgb(32, 32, 32);
+}
+
+aside .pg-contacts-container.pg-black .pg-user-chat{
+  border-bottom: 1px solid black;
+}
+
+aside .pg-contacts-container.pg-black{
+  background-color: rgb(32, 32, 32);
+}
+
+.pg-chat-container .pg-chat-wrapper.pg-black{
+  background-image: url("../img/mine_dark.jpeg");
+}
+
+.pg-user-chat.pg-black:not(.active):hover{
+  transition: all .5s;
+  background-color: rgb(48, 47, 47);
+}
+
+.pg-message-input.pg-black{
+  background-color: rgb(32, 32, 32);
+}
+
+.pg-message-input.pg-black i:hover{
+  transition: all .5s;
+  color: white;
+}
+
+.pg-main-wrapper.pg-black{
+  transition: all .5s;
+  background: rgb(0,150,136);
+  background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgb(58, 57, 57) 15%);
+}

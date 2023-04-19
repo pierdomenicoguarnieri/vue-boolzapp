@@ -3,9 +3,7 @@
   transition: all .5s;
   background-color: #cecece;
 }
-.active.pg-black{
-  background-color: rgb(68, 67, 67);
-}
+
 .message{
   padding: 10px 10px;
   border-radius: 10px;
@@ -23,14 +21,6 @@
 .received{
   background-color: white;
   align-self: flex-start;
-}
-
-.sent.pg-black{
-  background-color: rgba(0,150,136,1);
-}
-
-.received.pg-black{
-  background-color: rgb(58, 57, 57);
 }
 
 .pg-chevron{
@@ -73,14 +63,6 @@
   top: 0;
   position: absolute !important;
 }
-
-.dropdown-menu.show.pg-black{
-  background-color: rgb(32, 32, 32);
-}
-
-.offcanvas.pg-black{
-  background-color: rgb(32, 32, 32);
-}
   
 .offcanvas {
   position: absolute !important;
@@ -115,10 +97,6 @@
   border-color: #B1B1B1;
 }
 
-.pg-top-bar.pg-black{
-  background-color: rgb(44, 44, 44);
-}
-
 .pg-icon > i{
   color: #B1B1B1;
   padding: 0 5px;
@@ -128,11 +106,6 @@
   transition: all .5s;
   color: black;
   cursor: pointer;
-}
-
-.pg-icon.pg-black > i:hover{
-  transition: all .5s;
-  color: white;
 }
 
 .pg-small-text{
@@ -153,11 +126,6 @@ aside .pg-top-bar{
   border-right: 2px solid #cecece;
 }
 
-aside .pg-top-bar.pg-black{
-  border-right: 2px solid black;
-  color: white;
-}
-
 aside .pg-top-bar .pg-user img{
   width: 50px;
 }
@@ -172,14 +140,6 @@ aside .pg-notification-bar .pg-icon > i{
   color: #8EDAFC;
 }
 
-aside .pg-notification-bar.pg-black{
-  background-color: rgb(0, 1, 39);
-}
-
-aside .pg-notification-bar.pg-black .pg-icon > i{
-  color: rgb(0, 1, 39);
-}
-
 aside .pg-notification-bar .pg-icon{
   width: 45px;
   height: 45px;
@@ -189,24 +149,12 @@ aside .pg-input-container{
   background-color: #FAFAFA;
 }
 
-aside .pg-input-container.pg-black{
-  background-color: rgb(32, 32, 32);
-}
-
 aside .pg-contacts-container .pg-user-chat{
   border-bottom: 1px solid #cecece;
 }
 
-aside .pg-contacts-container.pg-black .pg-user-chat{
-  border-bottom: 1px solid black;
-}
-
 aside .pg-contacts-container .pg-user-chat .img-container img{
   width: 70px;
-}
-
-aside .pg-contacts-container.pg-black{
-  background-color: rgb(32, 32, 32);
 }
 
 /* Chat Container */
@@ -223,18 +171,9 @@ aside .pg-contacts-container.pg-black{
   padding: 10px 10px;
 }
 
-.pg-chat-container .pg-chat-wrapper.pg-black{
-  background-image: url("../img/mine_dark.jpeg");
-}
-
 .pg-user-chat:not(.active):hover{
   transition: all .5s;
   background-color: #EAEAEA;
-}
-
-.pg-user-chat.pg-black:not(.active):hover{
-  transition: all .5s;
-  background-color: rgb(48, 47, 47);
 }
 
 .pg-contact-top img{
@@ -247,17 +186,8 @@ aside .pg-contacts-container.pg-black{
   color: #6A7275;
 }
 
-.pg-message-input.pg-black{
-  background-color: rgb(32, 32, 32);
-}
-
 .pg-message-input i:hover{
   transition: all .5s;
   color: black;
   cursor: pointer;
-}
-
-.pg-message-input.pg-black i:hover{
-  transition: all .5s;
-  color: white;
 }
