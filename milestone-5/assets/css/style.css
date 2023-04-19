@@ -25,6 +25,14 @@
   align-self: flex-start;
 }
 
+.sent.pg-black{
+  background-color: rgba(0,150,136,1);
+}
+
+.received.pg-black{
+  background-color: rgb(58, 57, 57);
+}
+
 .pg-chevron{
   position: absolute;
   opacity: 0;
@@ -119,6 +127,7 @@
 .pg-icon > i:hover{
   transition: all .5s;
   color: black;
+  cursor: pointer;
 }
 
 .pg-icon.pg-black > i:hover{
@@ -245,6 +254,7 @@ aside .pg-contacts-container.pg-black{
 .pg-message-input i:hover{
   transition: all .5s;
   color: black;
+  cursor: pointer;
 }
 
 .pg-message-input.pg-black i:hover{

@@ -127,7 +127,7 @@
             <div class="pg-chat-wrapper position-relative overflow-x-hidden h-100 overflow-scroll" :class="{'pg-black': darkMode}">
 
               <!-- Message -->
-              <div v-for="(text, msgIndex) in contacts[index].messages" class="message position-relative mb-2" :class="text.status">
+              <div v-for="(text, msgIndex) in contacts[index].messages" class="message position-relative mb-2" :class="text.status, {'pg-black' : darkMode}">
                 <span class="pg-chevron" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chevron-down text-black-50"></i></span>
 
                 <!-- Dropdown Menu -->
@@ -139,8 +139,8 @@
                 </div>
                 <!-- /Dropdown Menu -->
                 
-                <span class="me-4" v-html="text.message"></span>
-                <span class="pg-small-text text-black-50 text-end me-2">{{text.time}}</span>
+                <span class="me-4" v-html="text.message" :class="{whiteText : darkMode}"></span>
+                <span class="pg-small-text text-end me-2" :class="{whiteText : darkMode}">{{text.time}}</span>
               </div>
               <!-- /Message -->
               
@@ -189,8 +189,8 @@
             <div class="pg-message-input d-flex align-items-center flex-shrink-0" :class="{'pg-black' : darkMode}">
               
               <div class="btn-group dropup">
-                <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-regular fa-face-smile fs-4 mx-5 my-4"></i>
+                <span data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-regular fa-face-smile fs-4 mx-5 my-4 poi"></i>
                 </span>
                 <ul class="dropdown-menu pg-emoji-menu" :class="{'pg-black' : darkMode}">
                   <li class="px-3 fs-3" @click="addEmoji(1)"><i class="fa-solid fa-face-smile" style="color: #f6d32d;"></i></li>
