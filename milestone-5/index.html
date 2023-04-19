@@ -22,7 +22,7 @@
           <aside class="d-flex flex-column">
 
             <!-- Top Bar -->
-            <div class="pg-top-bar border-end border-2 d-flex align-items-center justify-content-between flex-shrink-0">
+            <div class="pg-top-bar d-flex align-items-center justify-content-between flex-shrink-0" :class="{'pg-black' : darkMode}">
 
               <!-- User Info -->
               <div class="pg-user ps-3">
@@ -32,7 +32,8 @@
               <!-- /User Info -->
 
               <!-- Icons -->
-              <div class="pg-icon fs-4 pe-2">
+              <div class="pg-icon fs-4 pe-2" :class="{'pg-black' : darkMode}">
+                <i class="fa-solid fa-circle-half-stroke" @click="darkMode = !darkMode"></i>
                 <i class="fa-solid fa-circle-notch px-2"></i>
                 <i class="fa-solid fa-message px-2"></i>
                 <i class="fa-solid fa-ellipsis-vertical px-2"></i>
@@ -42,27 +43,27 @@
             <!-- /Top Bar -->
 
             <!-- Notification Container -->
-            <div class="pg-notification-bar d-flex px-3 align-items-center flex-shrink-0">
+            <div class="pg-notification-bar d-flex px-3 align-items-center flex-shrink-0" :class="{'pg-black' : darkMode}">
 
               <!-- Icon Container -->
               <div class="pg-icon rounded-circle bg-white d-flex justify-content-center align-items-center me-3">
-                <i class="fa-solid fa-bell-slash fs-5" style="color: #8dd9fb;"></i>
+                <i class="fa-solid fa-bell-slash fs-5"></i>
               </div>
               <!-- /Icon Container -->
 
               <!-- Text Container -->
               <div class="pg-text d-flex flex-column">
-                <span class="pb-0 fw-medium">Ricevi notifiche di nuovi messaggi</span>
-                <a href="#" class="text-black-50">Attiva notifiche desktop</a>
+                <span class="pb-0 fw-medium" :class="{whiteText : darkMode}">Ricevi notifiche di nuovi messaggi</span>
+                <a href="#" :class="{whiteText : darkMode}">Attiva notifiche desktop</a>
               </div>
               <!-- /Text Container -->
             </div>
             <!-- /Notification Container -->
 
             <!-- Input Container -->
-            <div class="pg-input-container input-group p-2 flex-shrink-0">
+            <div class="pg-input-container input-group p-2 flex-shrink-0" :class="{'pg-black' : darkMode}">
 
-              <span class="input-group-text bg-white" id="inputGroup-sizing-default">
+              <span class="input-group-text" id="inputGroup-sizing-default">
                 <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
               </span>
 
@@ -71,20 +72,20 @@
             <!-- /Input Container -->
 
             <!-- Contacts Container -->
-            <div class="pg-contacts-container overflow-scroll">
-              <div v-for="(contact, i) in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : index == i}" v-show="contact.visible" @click="index = i">
+            <div class="pg-contacts-container overflow-scroll" :class="{'pg-black' : darkMode}">
+              <div v-for="(contact, i) in contacts" class="pg-user-chat d-flex py-2" :class="{active : index == i} , {'pg-black' : darkMode}" v-show="contact.visible" @click="index = i">
                 <div class="img-container px-3">
                   <img class="rounded-circle" :src="contact.avatar" alt="">
                 </div>
 
                 <div class="text-container d-flex flex-column py-2">
-                  <span class="fw-medium">{{contact.name}}</span>
-                  <span v-if="contact.messages.length >= 1" class="pg-last-message text-black-50 fs-6" v-html="contact.messages[contact.messages.length - 1].message"></span>
+                  <span class="fw-medium" :class="{whiteText : darkMode}">{{contact.name}}</span>
+                  <span v-if="contact.messages.length >= 1" class="pg-last-message fs-6" v-html="contact.messages[contact.messages.length - 1].message" :class="{whiteText : darkMode}"></span>
                 </div>
 
                 <div class="date-container ms-auto d-flex flex-column text-end me-3 py-2">
-                  <span v-if="contact.messages.length >= 1" class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
-                  <span v-if="contact.messages.length >= 1" class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].time}}</span>
+                  <span v-if="contact.messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}">{{contact.messages[contact.messages.length - 1].date}}</span>
+                  <span v-if="contact.messages.length >= 1" class=" fs-6" :class="{whiteText : darkMode}">{{contact.messages[contact.messages.length - 1].time}}</span>
                 </div>
 
               </div>
@@ -97,7 +98,7 @@
           <div class="pg-chat-container d-flex flex-column h-100">
 
             <!-- Top Bar -->
-            <div class="pg-top-bar d-flex align-items-center justify-content-between flex-shrink-0">
+            <div class="pg-top-bar d-flex align-items-center justify-content-between flex-shrink-0" :class="{'pg-black' : darkMode}">
 
               <!-- Contact Top -->
               <div class="pg-contact-top d-flex ps-3">
@@ -106,14 +107,14 @@
                 </div>
 
                 <div class="text-container d-flex justify-content-center flex-column ms-3">
-                  <span>{{contacts[index].name}}</span>
-                  <span v-if="contacts[index].messages.length >= 1" class="text-black-50 fs-6">Ultimo accesso alle {{contacts[index].messages[contacts[index].messages.length - 1].time}} del {{contacts[index].messages[contacts[index].messages.length - 1].date}}</span>
+                  <span :class="{whiteText : darkMode}">{{contacts[index].name}}</span>
+                  <span v-if="contacts[index].messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}">Ultimo accesso alle {{contacts[index].messages[contacts[index].messages.length - 1].time}} del {{contacts[index].messages[contacts[index].messages.length - 1].date}}</span>
                 </div>
               </div>
               <!-- /Contact Top -->
 
               <!-- Icon Container -->
-              <div class="pg-icon fs-4 pe-2">
+              <div class="pg-icon fs-4 pe-2" :class="{'pg-black' : darkMode}">
                 <i class="fa-solid fa-magnifying-glass px-2"></i>
                 <i class="fa-solid fa-paperclip px-2"></i>
                 <i class="fa-solid fa-ellipsis-vertical px-2"></i>
@@ -123,7 +124,7 @@
             <!-- /Top Bar -->
 
             <!-- Chat Wrapper -->
-            <div class="pg-chat-wrapper position-relative overflow-x-hidden h-100 overflow-scroll">
+            <div class="pg-chat-wrapper position-relative overflow-x-hidden h-100 overflow-scroll" :class="{'pg-black': darkMode}">
 
               <!-- Message -->
               <div v-for="(text, msgIndex) in contacts[index].messages" class="message position-relative mb-2" :class="text.status">
@@ -144,11 +145,11 @@
               <!-- /Message -->
               
               <!-- Offcanvas -->
-              <div v-if="contacts[index].messages.length >= 1" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+              <div v-if="contacts[index].messages.length >= 1" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" :class="{'pg-black' : darkMode}">
                 
                 <div class="offcanvas-header">
                   
-                  <h5 class="offcanvas-title" id="offcanvasLabel">Info Messaggio</h5>
+                  <h5 class="offcanvas-title" id="offcanvasLabel" :class="{whiteText : darkMode}">Info Messaggio</h5>
                   
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
@@ -157,16 +158,25 @@
                   
                   <div class="d-flex flex-column">
 
-                    <div class="py-2">
+                    <div class="py-2" :class="{whiteText : darkMode}">
                       <span class="fw-semibold">Messaggio:</span>
                       <span v-html="contacts[index].messages[messageIndex].message"></span>
                     </div>
 
-                    <span class="py-2"><span class="fw-semibold">Data d'invio:</span> {{contacts[index].messages[messageIndex].date}}</span>
+                    <div class="py-2" :class="{whiteText : darkMode}">
+                      <span class="fw-semibold">Data d'invio: </span>
+                      <span>{{contacts[index].messages[messageIndex].date}}</span>
+                    </div>
 
-                    <span class="py-2"><span class="fw-semibold">Ora d'invio:</span> {{contacts[index].messages[messageIndex].time}}</span>
+                    <div class="py-2" :class="{whiteText : darkMode}">
+                      <span class="fw-semibold">Ora d'invio: </span> 
+                      <span>{{contacts[index].messages[messageIndex].time}}</span>
+                    </div>
 
-                    <span><span class="fw-semibold">Status del messaggio:</span> {{contacts[index].messages[messageIndex].status}}</span>
+                    <div :class="{whiteText : darkMode}">
+                      <span class="fw-semibold">Status del messaggio: </span> 
+                      <span>{{contacts[index].messages[messageIndex].status}}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -176,13 +186,13 @@
             <!-- /Chat Wrapper -->
 
             <!-- Message Input -->
-            <div class="pg-message-input d-flex align-items-center flex-shrink-0">
+            <div class="pg-message-input d-flex align-items-center flex-shrink-0" :class="{'pg-black' : darkMode}">
               
               <div class="btn-group dropup">
                 <span class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   <i class="fa-regular fa-face-smile fs-4 mx-5 my-4"></i>
                 </span>
-                <ul class="dropdown-menu pg-emoji-menu">
+                <ul class="dropdown-menu pg-emoji-menu" :class="{'pg-black' : darkMode}">
                   <li class="px-3 fs-3" @click="addEmoji(1)"><i class="fa-solid fa-face-smile" style="color: #f6d32d;"></i></li>
                   <li class="px-3 fs-3" @click="addEmoji(2)"><i class="fa-solid fa-face-surprise" style="color: #f6d32d;"></i></li>
                   <li class="px-3 fs-3" @click="addEmoji(3)"><i class="fa-solid fa-face-sad-cry" style="color: #f6d32d;"></i></li>

@@ -14,6 +14,7 @@ createApp({
       newMsgText: "",
       checkMsg: "",
       messageIndex: 0,
+      darkMode: false,
     }
   },
 
