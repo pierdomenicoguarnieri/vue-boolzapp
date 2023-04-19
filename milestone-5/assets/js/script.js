@@ -12,6 +12,7 @@ createApp({
       },
       index: 0,
       newMsgText: "",
+      emoji: '',
       checkMsg: "",
       messageIndex: 0,
     }
@@ -19,16 +20,17 @@ createApp({
 
   methods: {
     newMsg(){
-      if(this.newMsgText.length > 0){
+      if(this.newMsgText.length > 0 || this.emoji.length > 0){
         const msg = {
           date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
-          message: this.newMsgText,
+          message: this.newMsgText + this.emoji,
           status: 'sent'
         }
         this.contacts[this.index].messages.push(msg);
         this.autoMsg();
         this.newMsgText = "";
+        this.emoji = '';
       }
     },
 
@@ -57,6 +59,26 @@ createApp({
 
     saveIndex(msgIndex){
       this.messageIndex = msgIndex;
+    },
+    
+    addEmoji(selectedEmoji){
+      switch (selectedEmoji) {
+        case 1:
+          this.emoji += ' <i class="fa-solid fa-face-smile fs-5 ps-1" style="color: #f6d32d;"></i>';
+          break;
+
+        case 2:
+          this.emoji += ' <i class="fa-solid fa-face-surprise fs-5 ps-1" style="color: #f6d32d;"></i>';
+          break;
+
+        case 3:
+          this.emoji += ' <i class="fa-solid fa-face-sad-cry fs-5 ps-1" style="color: #f6d32d;"></i>';
+          break;
+
+        default:
+          this.emoji += '';
+          break;
+      }
     }
   },
 }).mount("#app")

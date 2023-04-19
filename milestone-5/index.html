@@ -72,24 +72,21 @@
 
             <!-- Contacts Container -->
             <div class="pg-contacts-container overflow-scroll">
-              <div v-for="(contact, i) in contacts" class="pg-user-chat" :class="{active : index == i}" @click="index = i">
-
-                <div v-if="contact.visible" class="pg-contact-body border-1 border-bottom d-flex py-2">
-                  <div class="img-container px-3">
-                    <img class="rounded-circle" :src="contact.avatar" alt="">
-                  </div>
-
-                  <div class="text-container d-flex flex-column py-2">
-                    <span class="fw-medium">{{contact.name}}</span>
-                    <span v-if="contact.messages.length >= 1" class="pg-last-message text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].message}}</span>
-                  </div>
-
-                  <div class="date-container ms-auto d-flex flex-column text-end me-3 py-2">
-                    <span v-if="contact.messages.length >= 1" class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
-                    <span v-if="contact.messages.length >= 1" class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].time}}</span>
-                  </div>
+              <div v-for="(contact, i) in contacts" class="pg-user-chat border-1 border-bottom d-flex py-2" :class="{active : index == i}" v-show="contact.visible" @click="index = i">
+                <div class="img-container px-3">
+                  <img class="rounded-circle" :src="contact.avatar" alt="">
                 </div>
-                
+
+                <div class="text-container d-flex flex-column py-2">
+                  <span class="fw-medium">{{contact.name}}</span>
+                  <span v-if="contact.messages.length >= 1" class="pg-last-message text-black-50 fs-6" v-html="contact.messages[contact.messages.length - 1].message"></span>
+                </div>
+
+                <div class="date-container ms-auto d-flex flex-column text-end me-3 py-2">
+                  <span v-if="contact.messages.length >= 1" class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].date}}</span>
+                  <span v-if="contact.messages.length >= 1" class="text-black-50 fs-6">{{contact.messages[contact.messages.length - 1].time}}</span>
+                </div>
+
               </div>
             </div>
             <!-- /Contacts Container -->
@@ -127,30 +124,48 @@
 
             <!-- Chat Wrapper -->
             <div class="pg-chat-wrapper position-relative overflow-x-hidden h-100 overflow-scroll">
+
+              <!-- Message -->
               <div v-for="(text, msgIndex) in contacts[index].messages" class="message position-relative mb-2" :class="text.status">
                 <span class="pg-chevron" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chevron-down text-black-50"></i></span>
-                <div class="dropdown">
+
+                <!-- Dropdown Menu -->
+                <div class="dropdown" v-if="contacts[index].messages.length >= 1">
                   <ul class="dropdown-menu flex-column">
                     <li><button class="dropdown-item" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" @click="saveIndex(msgIndex)">Info messaggio</button></li>
                     <li @click="deleteMessage(msgIndex)"><button class="dropdown-item" type="button">Elimina messaggio</button></li>
                   </ul>
                 </div>
-
-                <span class="me-4">{{text.message}}</span>
+                <!-- /Dropdown Menu -->
+                
+                <span class="me-4" v-html="text.message"></span>
                 <span class="pg-small-text text-black-50 text-end me-2">{{text.time}}</span>
               </div>
+              <!-- /Message -->
               
               <!-- Offcanvas -->
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+              <div v-if="contacts[index].messages.length >= 1" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                
                 <div class="offcanvas-header">
+                  
                   <h5 class="offcanvas-title" id="offcanvasLabel">Info Messaggio</h5>
+                  
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+
                 <div class="offcanvas-body">
+                  
                   <div class="d-flex flex-column">
-                    <span class="py-2"><span class="fw-semibold">Messaggio:</span>   {{contacts[index].messages[messageIndex].message}}</span>
+
+                    <div class="py-2">
+                      <span class="fw-semibold">Messaggio:</span>
+                      <span v-html="contacts[index].messages[messageIndex].message"></span>
+                    </div>
+
                     <span class="py-2"><span class="fw-semibold">Data d'invio:</span> {{contacts[index].messages[messageIndex].date}}</span>
+
                     <span class="py-2"><span class="fw-semibold">Ora d'invio:</span> {{contacts[index].messages[messageIndex].time}}</span>
+
                     <span><span class="fw-semibold">Status del messaggio:</span> {{contacts[index].messages[messageIndex].status}}</span>
                   </div>
                 </div>
@@ -168,9 +183,9 @@
                   <i class="fa-regular fa-face-smile fs-4 mx-5 my-4"></i>
                 </span>
                 <ul class="dropdown-menu pg-emoji-menu">
-                  <li class="px-3 fs-3"><i class="fa-solid fa-face-smile" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3"><i class="fa-solid fa-face-surprise" style="color: #f6d32d;"></i></li>
-                  <li class="px-3 fs-3"><i class="fa-solid fa-face-sad-cry" style="color: #f6d32d;"></i></li>
+                  <li class="px-3 fs-3" @click="addEmoji(1)"><i class="fa-solid fa-face-smile" style="color: #f6d32d;"></i></li>
+                  <li class="px-3 fs-3" @click="addEmoji(2)"><i class="fa-solid fa-face-surprise" style="color: #f6d32d;"></i></li>
+                  <li class="px-3 fs-3" @click="addEmoji(3)"><i class="fa-solid fa-face-sad-cry" style="color: #f6d32d;"></i></li>
                 </ul>
               </div>
 

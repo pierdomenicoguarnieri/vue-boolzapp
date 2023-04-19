@@ -7,7 +7,7 @@ export default [
       {
         date: "01/01/2020",
         time: "15:25:55",
-        message: "Che fai?",
+        message: 'Che fai? <i class="fa-solid fa-face-smile fs-5 ps-1" style="color: #f6d32d;"></i>',
         status: 'sent'
       },
       {
