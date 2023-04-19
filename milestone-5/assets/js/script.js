@@ -52,7 +52,6 @@ createApp({
     },
 
     deleteMessage(msgIndex){
-      console.log(msgIndex)
       this.contacts[this.index].messages.splice(msgIndex,1)
     },
 
@@ -72,6 +71,30 @@ createApp({
 
         case 3:
           this.newMsgText += ' <i class="fa-solid fa-face-sad-cry fs-5 ps-1" style="color: #f6d32d;"></i>';
+          break;
+          
+        case 4:
+          this.newMsgText += ` <i class="fa-solid fa-face-smile-beam fs-5 ps-1" style="color: #f6d32d;"></i>`;
+          break;
+        
+        case 5:
+          this.newMsgText += ` <i class="fa-solid fa-face-kiss-wink-heart fs-5 ps-1" style="color: #f6d32d;"></i>`;
+          break;
+
+        case 6:
+          this.newMsgText += ` <i class="fa-solid fa-face-meh-blank fs-5 ps-1" style="color: #f6d32d;"></i>`;
+          break;
+
+        case 7:
+          this.newMsgText += ` <i class="fa-solid fa-face-grin-hearts fs-5 ps-1" style="color: #f6d32d;"></i>`;
+          break;
+
+        case 8:
+          this.newMsgText += ` <i class="fa-solid fa-face-smile-wink fs-5 ps-1" style="color: #f6d32d;"></i>`;
+          break;
+
+        case 9:
+          this.newMsgText += ` <i class="fa-solid fa-face-angry fs-5 ps-1" style="color: #e01b24;"></i>`;
           break;
 
         default:
