@@ -28,7 +28,7 @@ createApp({
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
           message: this.newMsgText,
           status: 'sent',
-          visible: true
+          show: true
         }
         this.contacts[this.index].messages.push(msg);
         this.scrollUp();
@@ -46,7 +46,7 @@ createApp({
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
           message: replyArray[randomIndex],
           status: 'received',
-          visible: true
+          show: true
         }
         this.scrollUp();
         this.contacts[this.index].messages.push(msg);

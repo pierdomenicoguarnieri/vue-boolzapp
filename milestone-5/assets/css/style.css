@@ -63,7 +63,7 @@
   top: 0;
   position: absolute !important;
 }
-  
+
 .offcanvas {
   position: absolute !important;
   max-width: none !important;
@@ -173,6 +173,7 @@ aside .pg-contacts-container .pg-user-chat .img-container img{
   flex-direction: column;
   word-wrap: break-word;
   padding: 10px 10px;
+  scroll-behavior: smooth !important;
 }
 
 .pg-user-chat:not(.active):hover{
