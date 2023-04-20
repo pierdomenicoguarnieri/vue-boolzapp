@@ -73,9 +73,7 @@ createApp({
      * This function searches within the contacts by comparing the string taken from the v-model and checks if it is present in the property "name"
      */
     searchContact(){
-      console.log(this.checkMsg)
       this.contacts.forEach((contact) => {
-        console.log(contact.name.toLowerCase().includes(this.checkMsg.toLowerCase()))
         contact.visible = contact.name.toLowerCase().includes(this.checkMsg.toLowerCase())
       })
     },

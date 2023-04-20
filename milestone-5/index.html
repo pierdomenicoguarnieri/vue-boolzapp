@@ -197,7 +197,7 @@
               <!-- /Message -->
               
               <!-- Offcanvas -->
-              <div v-if="contacts[index].messages.length >= 1" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" :class="{'pg-black' : darkMode}">
+              <div v-if="contacts[index].messages.length >= 1" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" data-bs-scroll="false" :class="{'pg-black' : darkMode}" @wheel.prevent @touchmove.prevent @scroll.prevent>
                 
                 <div class="offcanvas-header">
                   
