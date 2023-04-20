@@ -21,8 +21,11 @@ createApp({
   },
 
   methods: {
+    /**
+     * This function adds a new message written from the user
+     */
     newMsg(){
-      if(this.newMsgText.length > 0 || this.emoji.length > 0){
+      if(this.newMsgText.length > 0){
         const msg = {
           date: dt.now().setLocale("it").toFormat("dd/MM/yyyy"),
           time: dt.now().setLocale("it").toLocaleString(dt.TIME_24_WITH_SECONDS),
@@ -38,6 +41,9 @@ createApp({
       }
     },
 
+    /**
+     * This function auto responds with a custom message from an array of messages
+     */
     autoMsg(){
       const randomIndex = Math.floor(Math.random()*replyArray.length)+ 1
       setTimeout(() => {
@@ -53,6 +59,9 @@ createApp({
       }, 1000);
     },
 
+    /**
+     * This function scrolls up automatically when a message is sent
+     */
     scrollUp(){
       setTimeout(() => {
         const chat = document.querySelector('.pg-chat-wrapper');
@@ -60,6 +69,9 @@ createApp({
       }, 1);
     },
 
+    /**
+     * This function searches within the contacts by comparing the string taken from the v-model and checks if it is present in the property "name"
+     */
     searchContact(){
       console.log(this.checkMsg)
       this.contacts.forEach((contact) => {
@@ -68,20 +80,38 @@ createApp({
       })
     },
 
+    /**
+     * This function searches within the message list and shows only the messages that contains the string of the v-model
+     */
     searchMsg(){
       this.contacts[this.index].messages.forEach((txt) => {
         txt.show = txt.message.toLowerCase().includes(this.checkTxt.toLowerCase())
       })
     },
 
+    /**
+     * This function gets the index of the message that the user clicks and deletes it from the array of messages
+     * 
+     * @param {number} msgIndex 
+     */
     deleteMessage(msgIndex){
       this.contacts[this.index].messages.splice(msgIndex,1)
     },
 
+    /**
+     * This function saves the index of the message that the user clicks
+     * 
+     * @param {number} msgIndex 
+     */
     saveIndex(msgIndex){
       this.messageIndex = msgIndex;
     },
     
+    /**
+     * This function adds a string to newMsgText using a switch case
+     * 
+     * @param {number} selectedEmoji 
+     */
     addEmoji(selectedEmoji){
       switch (selectedEmoji) {
         case 1:
