@@ -61,14 +61,16 @@ createApp({
     },
 
     searchContact(){
+      console.log(this.checkMsg)
       this.contacts.forEach((contact) => {
+        console.log(contact.name.toLowerCase().includes(this.checkMsg.toLowerCase()))
         contact.visible = contact.name.toLowerCase().includes(this.checkMsg.toLowerCase())
       })
     },
 
     searchMsg(){
       this.contacts[this.index].messages.forEach((txt) => {
-        txt.visible = txt.message.toLowerCase().includes(this.checkTxt.toLowerCase())
+        txt.show = txt.message.toLowerCase().includes(this.checkTxt.toLowerCase())
       })
     },
 

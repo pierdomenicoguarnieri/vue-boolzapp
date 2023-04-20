@@ -74,21 +74,22 @@
 
             <!-- Contacts Container -->
             <div class="pg-contacts-container overflow-scroll" :class="{'pg-black' : darkMode}">
-              <div v-for="(contact, i) in contacts" class="pg-user-chat d-flex py-2" :class="{active : index == i} , {'pg-black' : darkMode}" v-show="contact.visible" @click="index = i">
-                <div class="img-container px-3">
-                  <img class="rounded-circle" :src="contact.avatar" alt="">
-                </div>
+              <div v-for="(contact, i) in contacts" class="pg-user-chat" :class="{active : index == i} , {'pg-black' : darkMode}" v-show="contact.visible" @click="index = i">
+                <div class="pg-user-body d-flex py-2">
+                  <div class="img-container px-3">
+                    <img class="rounded-circle" :src="contact.avatar" alt="">
+                  </div>
 
-                <div class="text-container d-flex flex-column py-2">
-                  <span class="fw-medium" :class="{whiteText : darkMode}">{{contact.name}}</span>
-                  <span v-if="contact.messages.length >= 1" class="pg-last-message fs-6" v-html="contact.messages[contact.messages.length - 1].message" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}"></span>
-                </div>
+                  <div class="text-container d-flex flex-column py-2">
+                    <span class="fw-medium" :class="{whiteText : darkMode}">{{contact.name}}</span>
+                    <span v-if="contact.messages.length >= 1" class="pg-last-message fs-6" v-html="contact.messages[contact.messages.length - 1].message" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}"></span>
+                  </div>
 
-                <div class="date-container ms-auto d-flex flex-column text-end me-3 py-2">
-                  <span v-if="contact.messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">{{contact.messages[contact.messages.length - 1].date}}</span>
-                  <span v-if="contact.messages.length >= 1" class=" fs-6" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">{{contact.messages[contact.messages.length - 1].time}}</span>
+                  <div class="date-container ms-auto d-flex flex-column text-end me-3 py-2">
+                    <span v-if="contact.messages.length >= 1" class="fs-6" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">{{contact.messages[contact.messages.length - 1].date}}</span>
+                    <span v-if="contact.messages.length >= 1" class=" fs-6" :class="{whiteText : darkMode}, {'text-black-50': !darkMode}">{{contact.messages[contact.messages.length - 1].time}}</span>
+                  </div>
                 </div>
-
               </div>
             </div>
             <!-- /Contacts Container -->
@@ -122,7 +123,7 @@
                     <i class="fa-solid fa-magnifying-glass fs-4 px-2"></i>
                   </button>
                   <div class="dropdown-menu p-0 pg-search">
-                    <input v-model="checkTxt" @keyup="searchMsg" class="form-control w-100" type="text" placeholder="Cerca un messaggio">
+                    <input v-model.trim="checkTxt" @keyup="searchMsg" class="form-control w-100" type="text" placeholder="Cerca un messaggio">
                   </div>
                 </div>
                 
@@ -137,7 +138,7 @@
             <div class="pg-chat-wrapper position-relative overflow-x-hidden h-100 overflow-scroll" :class="{'pg-black': darkMode}">
 
               <!-- Message -->
-              <div v-for="(text, msgIndex) in contacts[index].messages" v-show="text.visible" class="message position-relative mb-2" :class="text.status, {'pg-black' : darkMode}">
+              <div v-for="(text, msgIndex) in contacts[index].messages" v-show="text.show" class="message position-relative mb-2" :class="text.status, {'pg-black' : darkMode}">
                 
                 <span class="pg-chevron" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-chevron-down text-black-50"></i></span>
 
