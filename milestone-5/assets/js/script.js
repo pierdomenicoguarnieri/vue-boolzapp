@@ -54,6 +54,7 @@ createApp({
           status: 'received',
           show: true
         }
+        showNotification(msg.message, this.contacts[this.index].avatar, this.contacts[this.index].name);
         this.scrollUp();
         this.contacts[this.index].messages.push(msg);
       }, 1000);
@@ -152,6 +153,22 @@ createApp({
           this.newMsgText += '';
           break;
       }
-    }
+    },
   },
 }).mount("#app")
+
+function showNotification(message, image, name) {
+  Notification.requestPermission().then(function (permission) {
+    if (permission === "granted") {
+      const options = {
+        body: message,
+        icon: image,
+        image: "path/to/image.png"
+      };
+      const notification = new Notification("Nuovo messaggio da " + name, options);
+      notification.onclick = function () {
+        console.log("La notifica è stata cliccata");
+      };
+    }
+  });
+}
